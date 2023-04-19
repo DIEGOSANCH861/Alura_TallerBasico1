@@ -1,0 +1,70 @@
+<meta charset="UTF-8">
+	<h3>¿Alcohol o gasolina?</h3>
+	<br>
+	Problema: Si un carro tiene un tanque de 40 litros. 
+	<br>
+	Usando gasolina y consumiendo todo el tanque se hace un recorrido de 480 kilómetros. 
+	<br>
+	<br>
+	¿Cuál es la eficiencia del carro usando gasolina? o sea, ¿cuántos kilómetros recorre el carro por cada litro de gasolina? 
+	<br>
+	<br>
+	Para calcular la eficiencia: divide la distancia recorrida entre la cantidad de litros gastados. 
+	<br>
+	Imprime el valor utilizando document.write. Organiza las cuentas en variables.
+	<br>
+	Por otro lado, si el carro usa alcohol como combustible, el mismo tanque de 40 litros hace un recorrido de 300 kilómetros. ¿Cuál es el la eficiencia del carro usando alcohol?
+	<br>
+		<Script>
+			var tipoCombustible;
+			tipoCombustible = prompt("Por favor ingrese el tipo de combustible que contiene el vehículo: ", " ");
+			document.write("<br>");
+			document.write("El tipo de combustible que contiene el vehiculo es: " + tipoCombustible) ;
+			var distanciaRecorrida;
+			distanciaRecorrida = prompt("Por favor ingrese el valor de la distancia recorrida en kilómetros: ", 0);
+			document.write("<br>");
+			document.write("El valor Ingresado de la distancia recorrida es: " + distanciaRecorrida + " kilometros.") ;
+			var cantidadLitrosGastados;
+            cantidadLitrosGastados = prompt("Por favor ingrese el valor de la cantidad de litros gastados: ", 0);
+           	document.write("<br>");
+			document.write("El valor Ingresado de la cantidad de litros gastados es: " + cantidadLitrosGastados + " litros.");
+           	var eficiencia;
+           		if(tipoCombustible === "gasolina") {
+					if(distanciaRecorrida <= 480) {
+						if(cantidadLitrosGastados <= 40){
+							eficiencia=(distanciaRecorrida/cantidadLitrosGastados);
+						}
+						else
+						if(cantidadLitrosGastados > 40){
+							alert("La cantidad de litros gastados supera la capacidad del tanque de 40 litros " + cantidadLitrosGastados + " por favor cálcularla de nuevo ");
+						}
+					}	
+					else
+					if(distanciaRecorrida > 480){
+						alert("La distancia recorrida supera la capacidad del vehículo de 480 kilómetros con gasolina " + distanciaRecorrida + " por favor cálcularla de nuevo");
+					}
+				}
+				else
+					if(tipoCombustible === "alcohol") {
+						if(distanciaRecorrida <= 300) {
+							if(cantidadLitrosGastados<=40) {
+								eficiencia=(distanciaRecorrida/cantidadLitrosGastados);
+							}
+							else
+							if(cantidadLitrosGastados>40) {
+							alert("La cantidad de litros gastados supera la capacidad del tanque de 40 litros " + cantidadLitrosGastados + " por favor cálcularla de nuevo ");
+							}
+						}	
+						else
+						if(distanciaRecorrida > 300) {
+						alert("La distancia recorrida supera la capacidad del vehículo de 300 kilómetros con alcohol " + distanciaRecorrida + " por favor cálcularla de nuevo");
+						}				
+					}
+				else
+				if(tipoCombustible !== "gasolina" || tipoCombustible !== "alcohol") {
+					alert("El tipo de combustible es diferente de gasolina y alcohol es: " + tipoCombustible + " por favor ingresarlo de nuevo");
+				}
+				document.write("<br>");
+				document.write("<br>");
+				document.write("El valor cálculado de eficiencia es: " + eficiencia);
+		</Script>
